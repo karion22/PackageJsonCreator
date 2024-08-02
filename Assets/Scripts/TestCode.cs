@@ -10,21 +10,7 @@ namespace KRN.Utility
     {
         void Start()
         {
-            var values = CultureInfo.GetCultures(CultureTypes.AllCultures);
-
-            string specificCultureStr = string.Empty;
-            foreach (var value in values)
-            {
-                try
-                {
-                    CultureInfo cultureInfo = CultureInfo.CreateSpecificCulture(value.Name);
-                    DebugLog.Print(cultureInfo.Name);
-                }
-                catch
-                {
-                    DebugLog.Print(" - ");
-                }
-            }
+            DebugLog.Print(Utility.GetConvertDate(System.DateTime.Now, "yy/mm/dd"));
         }
     }
 }
